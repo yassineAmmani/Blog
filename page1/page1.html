@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étudiant 1</title>
+    <link rel="stylesheet" href="../global.css">
+    <style>
+        .hobby {
+            background-color: #e7f3fe;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Étudiant 1</h1>
+    </header>
+    <main>
+        <section class="student-info">
+            <h2>À propos de moi</h2>
+            <img src="../images/student1.jpg" alt="Étudiant 1" width="400px">
+            <p>Bonjour, je m'appelle Étudiant 1. Je suis passionné par la programmation et j'aime passer mon temps à coder de nouveaux projets. En plus de la programmation, j'aime aussi lire des livres de science-fiction et faire du sport.</p>
+            <div class="hobby">
+                <h3>Programmation</h3>
+                <p>J'aime développer des applications web et mobiles. J'ai travaillé sur plusieurs projets en utilisant des technologies comme HTML, CSS, JavaScript et React.</p>
+                <div class="gallery">
+                    <img src="../images/project1.jpg" alt="Projet 1">
+                    <img src="../images/project2.jpg" alt="Projet 2">
+                    <img src="../images/project3.jpg" alt="Projet 3">
+                </div>
+            </div>
+            <div class="hobby">
+                <h3>Lecture</h3>
+                <p>Je suis un grand amateur de science-fiction. Mes auteurs préférés sont Isaac Asimov et Arthur C. Clarke.</p>
+                <div class="gallery">
+                    <img src="../images/book1.jpg" alt="Livre 1">
+                    <img src="../images/book2.jpg" alt="Livre 2">
+                    <img src="../images/book3.jpg" alt="Livre 3">
+                </div>
+            </div>
+            <div class="hobby">
+                <h3>Sport</h3>
+                <p>Je pratique régulièrement le football et le basketball. Le sport est une excellente façon de se détendre et de rester en forme.</p>
+                <div class="gallery">
+                    <img src="../images/sport1.jpg" alt="Sport 1">
+                    <img src="../images/sport2.jpg" alt="Sport 2">
+                    <img src="../images/sport3.jpg" alt="Sport 3">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Blog Collaboratif</p>
+    </footer>
+    <script src="../route.js"></script>
+</body>
+</html>
