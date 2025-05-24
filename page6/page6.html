@@ -22,42 +22,72 @@
             width: 100%;
             border-radius: 5px;
         }
+        
+            .portrait {
+    width: 320px; /* taille fixe */
+    height: 320px;
+    object-fit: cover;
+    border-radius: 200px; /* coins arrondis */
+    border: 3px solid #444; /* cadre */
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* ombre */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+        .portrait:hover{
+            border-radius: 10%;
+            border: solid 3px rgb(130, 82, 227);
+            cursor: pointer;
+        }
+        .aura-photo {
+        display: block;
+        margin: 0 auto; /* centre l'image */
+        width: 300px; /* ajuste la taille selon tes besoins */
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20%; /* rend l'image circulaire */
+        border: 4px solid #333; /* ajoute un cadre */
+    }
+    .aura-photo:hover{
+        border-radius: 25%;
+        border: solid 4px rgb(207, 30, 30);
+        cursor: pointer ;
+    }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>ettaib amine chentaf</h1>
+        <h1>Amine</h1>
     </header>
     <main>
         <section class="student-info">
             <h2>À propos de moi</h2>
-            <img src="../images/student3.jpg" alt="Étudiant 3" width="400px">
-            <p>Bonjour, je m'appelle Étudiant 3. Je suis un passionné de cuisine et j'aime préparer des plats délicieux. En plus de la cuisine, j'aime aussi regarder des films et faire de la randonnée.</p>
+            <img src="./imagep6/aura.jpg" alt="Aura" class="aura-photo">
+            <p>Bonjour, je m'appelle Amine. Je suis passionné de jeux vidéo, de films d'action, d'horreur, etc.</p>
+
             <div class="hobby">
-                <h3>Cuisine</h3>
-                <p>J'aime préparer des plats de différentes cuisines du monde. J'aime expérimenter avec de nouvelles recettes et partager mes créations avec mes amis.</p>
+                <h3>Gaming</h3>
+                <p>J'aime jouer online avec mes amis.</p>
                 <div class="gallery">
-                    <img src="../images/food1.jpg" alt="Cuisine 1">
-                    <img src="../images/food2.jpg" alt="Cuisine 2">
-                    <img src="../images/food3.jpg" alt="Cuisine 3">
+                    <img src="./imagep6/play station 5.jpg" alt="PlayStation 5" class="portrait">
+                    <img src="./imagep6/mannete de jeux.jpg" alt="Manette de jeux" class="portrait">
                 </div>
             </div>
+
             <div class="hobby">
                 <h3>Cinéma</h3>
-                <p>Je suis un grand amateur de films. J'aime regarder des films de différents genres, des comédies aux films d'action.</p>
+                <p>Je suis un grand amateur de films. J'aime regarder des films de différents genres.</p>
                 <div class="gallery">
-                    <img src="../images/movie1.jpg" alt="Film 1">
-                    <img src="../images/movie2.jpg" alt="Film 2">
-                    <img src="../images/movie3.jpg" alt="Film 3">
+                    <img src="./imagep6/film.jpg" alt="Film" class="paysage">
                 </div>
             </div>
             <div class="hobby">
-                <h3>Randonnée</h3>
-                <p>J'aime faire de la randonnée et découvrir de nouveaux sentiers. La randonnée est une excellente façon de se connecter avec la nature.</p>
+                <h3>Voyager</h3>
+                <p>J'aime faire des voyages et découvrir de nouveaux choose.</p>
                 <div class="gallery">
-                    <img src="../images/hike1.jpg" alt="Randonnée 1">
-                    <img src="../images/hike2.jpg" alt="Randonnée 2">
-                    <img src="../images/hike3.jpg" alt="Randonnée 3">
+                    <img src="./imagep6/voyage en brazil.jpg" alt=" Voyage" class="square">
+                    <img src="./imagep6/voyage a fes.jpg" alt=" Voyage 2" class="square">
+                    <img src="./imagep6/voyage en Americ.jpg" alt=" Voyage 3" class="square">
                 </div>
             </div>
         </section>
