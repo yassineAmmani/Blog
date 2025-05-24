@@ -4,541 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amine</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../global.css">
     <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2ecc71;
-            --dark-color: #2c3e50;
-            --light-color: #ecf0f1;
-            --danger-color: #e74c3c;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--light-color);
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 0 auto 2rem;
-            display: block;
-        }
-
-        nav {
-            background-color: var(--dark-color);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background-color: var(--primary-color);
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        section {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
-        }
-
         .hobby {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .hobby:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .hobby h3 {
-            color: var(--secondary-color);
+            background-color: #e7f3fe;
+            padding: 1rem;
             margin-bottom: 1rem;
+            border-radius: 5px;
         }
-
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
-
         .gallery img {
             width: 100%;
             border-radius: 5px;
-            transition: transform 0.3s;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery img:hover {
-            transform: scale(1.03);
-        }
-
-        .game-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            margin-bottom: 2rem;
-        }
-
-        .game-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .game-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .game-info {
-            padding: 1.5rem;
-        }
-
-        .game-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .game-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
-        .game-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .game-tag {
-            background-color: #f0f0f0;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .movie-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            margin-bottom: 2rem;
-        }
-
-        .movie-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .movie-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .movie-info {
-            padding: 1.5rem;
-        }
-
-        .movie-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .movie-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
-        .movie-rating {
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 0.5rem 0;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Amine Chentaf</h1>
-        <img src="./amine.jpg" alt="Amine Chentaf" class="profile-img">
-        <p>Élève de 12 ans | Passionné de jeux vidéo et de cinéma | Toujours à la recherche de nouvelles aventures</p>
+        <h1>ettaib amine chentaf</h1>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">À Propos</a></li>
-            <li><a href="#games">Jeux Vidéo</a></li>
-            <li><a href="#movies">Films</a></li>
-            <li><a href="#hobbies">Passions</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
     <main>
-        <section id="about" class="fade-in">
-            <h2>À Propos de Moi</h2>
-            <div class="about-content">
-                <p>Bonjour! Je m'appelle Amine Chentaf, j'ai 12 ans et je suis en classe de 5ème. J'adore les jeux vidéo, les films et passer du temps avec mes amis. Je suis toujours à la recherche de nouvelles aventures et de nouvelles choses à apprendre.</p>
-                <p>Je vis à Casablanca avec ma famille. J'ai un petit frère qui a 8 ans et un chien nommé Max. J'aime aller à l'école, surtout les cours de maths et de sciences. En grandissant, je rêve de devenir développeur de jeux vidéo.</p>
-                <p>En dehors de l'école, j'aime jouer au football avec mes amis, faire du vélo et explorer de nouveaux endroits. J'adore aussi les pizzas et les glaces!</p>
-            </div>
-        </section>
-
-        <section id="games" class="fade-in">
-            <h2>Mes Jeux Vidéo Favoris</h2>
-            <div class="game-card">
-                <img src="https://via.placeholder.com/800x400" alt="Minecraft" class="game-img">
-                <div class="game-info">
-                    <h3>Minecraft</h3>
-                    <p>Minecraft est mon jeu préféré! J'adore explorer les mondes, construire des structures et survivre contre les monstres. J'ai même créé mon propre serveur où mes amis et moi pouvons jouer ensemble.</p>
-                    <div class="game-tags">
-                        <span class="game-tag">Aventure</span>
-                        <span class="game-tag">Créativité</span>
-                        <span class="game-tag">Multijoueur</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://via.placeholder.com/800x400" alt="Fortnite" class="game-img">
-                <div class="game-info">
-                    <h3>Fortnite</h3>
-                    <p>J'aime jouer à Fortnite avec mes amis. C'est toujours excitant de sauter de l'autobus de combat et de voir qui va gagner. J'ai même gagné quelques Victory Royales!</p>
-                    <div class="game-tags">
-                        <span class="game-tag">Battle Royale</span>
-                        <span class="game-tag">Action</span>
-                        <span class="game-tag">Multijoueur</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="game-card">
-                <img src="https://via.placeholder.com/800x400" alt="Roblox" class="game-img">
-                <div class="game-info">
-                    <h3>Roblox</h3>
-                    <p>Roblox est génial parce qu'il y a tellement de jeux différents à essayer. J'aime jouer à Adopt Me, Brookhaven et d'autres jeux avec mes amis. C'est aussi amusant de créer mes propres jeux.</p>
-                    <div class="game-tags">
-                        <span class="game-tag">Création</span>
-                        <span class="game-tag">Social</span>
-                        <span class="game-tag">Multijoueur</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="movies" class="fade-in">
-            <h2>Mes Films Favoris</h2>
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/800x400" alt="Avengers: Endgame" class="movie-img">
-                <div class="movie-info">
-                    <h3>Avengers: Endgame</h3>
-                    <p>C'est le meilleur film de super-héros de tous les temps! J'adore tous les personnages et les scènes d'action sont incroyables. J'ai vu ce film au moins cinq fois.</p>
-                    <div class="movie-rating">★★★★★</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/800x400" alt="Spider-Man: Into the Spider-Verse" class="movie-img">
-                <div class="movie-info">
-                    <h3>Spider-Man: Into the Spider-Verse</h3>
-                    <p>Ce film est génial! J'adore l'animation et l'histoire. Miles Morales est mon Spider-Man préféré. J'ai même le costume de Spider-Man pour Halloween.</p>
-                    <div class="movie-rating">★★★★★</div>
-                </div>
-            </div>
-
-            <div class="movie-card">
-                <img src="https://via.placeholder.com/800x400" alt="Harry Potter et la Pierre Philosophale" class="movie-img">
-                <div class="movie-info">
-                    <h3>Harry Potter et la Pierre Philosophale</h3>
-                    <p>J'adore l'univers d'Harry Potter. J'ai lu tous les livres et vu tous les films. J'aimerais aller à Poudlard et apprendre la magie!</p>
-                    <div class="movie-rating">★★★★★</div>
-                </div>
-            </div>
-        </section>
-
-        <section id="hobbies" class="fade-in">
-            <h2>Mes Passions</h2>
-
+        <section class="student-info">
+            <h2>À propos de moi</h2>
+            <img src="../images/student3.jpg" alt="Étudiant 3" width="400px">
+            <p>Bonjour, je m'appelle Étudiant 3. Je suis un passionné de cuisine et j'aime préparer des plats délicieux. En plus de la cuisine, j'aime aussi regarder des films et faire de la randonnée.</p>
             <div class="hobby">
-                <h3>Jeux Vidéo</h3>
-                <p>J'adore jouer aux jeux vidéo. C'est mon passe-temps préféré. J'aime explorer de nouveaux mondes, résoudre des énigmes et jouer avec mes amis en ligne. J'aimerais créer mes propres jeux un jour.</p>
+                <h3>Cuisine</h3>
+                <p>J'aime préparer des plats de différentes cuisines du monde. J'aime expérimenter avec de nouvelles recettes et partager mes créations avec mes amis.</p>
                 <div class="gallery">
-                    <img src="https://via.placeholder.com/400x300" alt="Jeux Vidéo 1">
-                    <img src="https://via.placeholder.com/400x300" alt="Jeux Vidéo 2">
-                    <img src="https://via.placeholder.com/400x300" alt="Jeux Vidéo 3">
-                    <img src="https://via.placeholder.com/400x300" alt="Jeux Vidéo 4">
+                    <img src="../images/food1.jpg" alt="Cuisine 1">
+                    <img src="../images/food2.jpg" alt="Cuisine 2">
+                    <img src="../images/food3.jpg" alt="Cuisine 3">
                 </div>
             </div>
-
             <div class="hobby">
                 <h3>Cinéma</h3>
-                <p>J'aime regarder des films, surtout les films d'action et de super-héros. J'adore aller au cinéma avec mes amis et ma famille. J'aimerais un jour travailler dans l'industrie du cinéma.</p>
+                <p>Je suis un grand amateur de films. J'aime regarder des films de différents genres, des comédies aux films d'action.</p>
                 <div class="gallery">
-                    <img src="https://via.placeholder.com/400x300" alt="Cinéma 1">
-                    <img src="https://via.placeholder.com/400x300" alt="Cinéma 2">
-                    <img src="https://via.placeholder.com/400x300" alt="Cinéma 3">
-                    <img src="https://via.placeholder.com/400x300" alt="Cinéma 4">
+                    <img src="../images/movie1.jpg" alt="Film 1">
+                    <img src="../images/movie2.jpg" alt="Film 2">
+                    <img src="../images/movie3.jpg" alt="Film 3">
                 </div>
             </div>
-
             <div class="hobby">
-                <h3>Football</h3>
-                <p>Je joue au football avec mes amis après l'école. C'est amusant de courir et de marquer des buts. J'aime aussi regarder les matchs de football à la télévision.</p>
+                <h3>Randonnée</h3>
+                <p>J'aime faire de la randonnée et découvrir de nouveaux sentiers. La randonnée est une excellente façon de se connecter avec la nature.</p>
                 <div class="gallery">
-                    <img src="https://via.placeholder.com/400x300" alt="Football 1">
-                    <img src="https://via.placeholder.com/400x300" alt="Football 2">
-                    <img src="https://via.placeholder.com/400x300" alt="Football 3">
-                    <img src="https://via.placeholder.com/400x300" alt="Football 4">
-                </div>
-            </div>
-
-            <div class="hobby">
-                <h3>Dessin</h3>
-                <p>J'aime dessiner des personnages de jeux vidéo et de films. C'est amusant de créer mes propres personnages et histoires. J'aimerais devenir un meilleur artiste.</p>
-                <div class="gallery">
-                    <img src="https://via.placeholder.com/400x300" alt="Dessin 1">
-                    <img src="https://via.placeholder.com/400x300" alt="Dessin 2">
-                    <img src="https://via.placeholder.com/400x300" alt="Dessin 3">
-                    <img src="https://via.placeholder.com/400x300" alt="Dessin 4">
+                    <img src="../images/hike1.jpg" alt="Randonnée 1">
+                    <img src="../images/hike2.jpg" alt="Randonnée 2">
+                    <img src="../images/hike3.jpg" alt="Randonnée 3">
                 </div>
             </div>
         </section>
-
-
     </main>
-
     <footer>
-        <div class="social-links">
-            <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2023 Amine Chentaf. Tous droits réservés.</p>
+        <p>&copy; 2023 Blog Collaboratif</p>
     </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add fade-in animation when elements come into view
-        const fadeInElements = document.querySelectorAll('.fade-in');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        fadeInElements.forEach(element => {
-            observer.observe(element);
-        });
-
-        // Form submission
-        const contactForm = document.querySelector('.contact-form');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Merci pour votre message! Je vous répondrai bientôt.');
-                this.reset();
-            });
-        }
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.createElement('button');
-        mobileMenuButton.className = 'mobile-menu-button';
-        mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
-        document.querySelector('nav').prepend(mobileMenuButton);
-
-        const navUl = document.querySelector('nav ul');
-        mobileMenuButton.addEventListener('click', () => {
-            navUl.classList.toggle('show');
-        });
-
-        // Update current year in footer
-        document.querySelector('footer p').textContent =
-            `© ${new Date().getFullYear()} Amine Chentaf. Tous droits réservés.`;
-
-        // Style the mobile menu button
-        const style = document.createElement('style');
-        style.textContent = `
-            .mobile-menu-button {
-                display: none;
-                background: none;
-                border: none;
-                color: white;
-                font-size: 1.5rem;
-                padding: 0.5rem;
-                position: absolute;
-                right: 1rem;
-                top: 0.5rem;
-            }
-
-            @media (max-width: 768px) {
-                .mobile-menu-button {
-                    display: block;
-                }
-
-                nav ul {
-                    display: none;
-                    flex-direction: column;
-                    width: 100%;
-                    text-align: center;
-                }
-
-                nav ul.show {
-                    display: flex;
-                }
-
-                nav ul li {
-                    margin: 0.5rem 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <script src="../route.js"></script>
 </body>
 </html>
